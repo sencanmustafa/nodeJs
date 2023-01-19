@@ -1,6 +1,6 @@
 const express = require("express");
-const dbFunctions = require("./db/dbConnection");
-const userRoute = require("./routes/userRoutes")
+const dbFunctions = require("./src/db/dbConnection");
+const userRoute = require("./src/routes/userRoutes")
 
 
 //DEFINE APP
