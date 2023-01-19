@@ -2,7 +2,7 @@ const userRoute = require("express").Router()
 
 const UserModel = require("../models/userModel");
 
-const dbFunctions = require("../db/dbConnection")
+
 
 
 // return all users
