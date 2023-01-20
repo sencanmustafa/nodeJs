@@ -1,7 +1,7 @@
 const express = require("express");
 const dbFunctions = require("./src/db/dbConnection");
 const userRoute = require("./src/routes/userRoutes")
-
+ 
 
 //DEFINE APP
 const app = express();
@@ -21,12 +21,6 @@ app.use("/api/user",userRoute);
 app.get('/',(req,res) => {
     res.status(200).json({'mesaj': "Main route"});
 })
-
-
-
-
-
-
 
 
 app.listen(3000,_ => {
