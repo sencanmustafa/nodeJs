@@ -2,11 +2,12 @@ const userRoute = require("express").Router()
 
 const UserModel = require("../models/userModel");
 
-
 const bcrypt = require("bcrypt");
 
+const errorHand = require("../middleware/errorHandling");
+
 // return all users
-userRoute.get("/users",async (req , res) => 
+userRoute.get("/users",async (req , res, next) => 
 {
     try 
     {
@@ -17,6 +18,7 @@ userRoute.get("/users",async (req , res) =>
         
     } catch (error) 
     {
+        next(error)
         return res.status(404).json({"statusCode" : 404 , "result" : `error occurred error => ${error} `}) 
     }
     
@@ -25,7 +27,6 @@ userRoute.get("/users",async (req , res) =>
 
 // new User
 userRoute.post("/newUser",async (req,res) => {
-    
     try {
         const newUser = new UserModel(req.body);
         newUser._doc.password = await bcrypt.hash(newUser._doc.password,10);
@@ -73,7 +74,6 @@ userRoute.patch("/updateUser/:id",async (req,res) => {
     }
 })
 
-userRoute.post
 
 
 module.exports = userRoute;

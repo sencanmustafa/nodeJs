@@ -1,4 +1,8 @@
 const mong = require("mongoose");
+
+const joi = require("@hapi/joi");
+const Joi = require("@hapi/joi");
+
 const Schema = mong.Schema;
 
 const userSchema = new Schema({
@@ -7,8 +11,8 @@ const userSchema = new Schema({
         required :true,
         lowercase:true,
         trim : true,
-        minlenght : 3,
-        maxlenght : 50
+        minLength : 3,
+        maxLength : 50
     },
     userName : {
         type: String,
@@ -39,5 +43,6 @@ const userSchema = new Schema({
 },{collection : 'Users',timestamps:true});
 
 const UserModel = mong.model('UserModel',userSchema);
+
 
 module.exports = UserModel;

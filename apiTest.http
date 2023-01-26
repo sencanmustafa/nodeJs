@@ -1,10 +1,10 @@
-POST http://localhost:3000/api/newUser
+POST http://localhost:3000/api/user/newUser
 Content-Type: application/json
 
 {
-  "name" : "Mustafa",
-  "lastName" : "Sencan",
-  "userName" : "sencanmustafa",
-  "email" : "sencanmustafa54@gmail.com",
+  "name" : "Mustafa4",
+  "lastName" : "Sencan6",
+  "userName" : "sencanmustafa03",
+  "email" : "sencanmustafa5534@gmail.com",
   "password" : "12345"
 }

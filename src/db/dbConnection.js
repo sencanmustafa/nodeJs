@@ -32,6 +32,6 @@ async function checkExistUser(user){
 }
 
 
-module.exports = {dbConnection,checkExistUser}
+module.exports = {dbConnection}
 
 
